@@ -92,4 +92,7 @@ export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
   { id: 1, thumbnail: 'https://images.unsplash.com/photo-1519861531473-92002639313a?auto=format&fit=crop&q=80&w=600', videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', title: 'Erfahrungsbericht 1' },
   { id: 2, thumbnail: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=600', videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', title: 'Erfahrungsbericht 2' },
   { id: 3, thumbnail: 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=600', videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', title: 'Erfahrungsbericht 3' },
+  { id: 4, thumbnail: 'https://images.unsplash.com/photo-1518063311540-064016a9668d?auto=format&fit=crop&q=80&w=600', videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', title: 'Erfahrungsbericht 4' },
+  { id: 5, thumbnail: 'https://images.unsplash.com/photo-1505666287802-931dc83948e9?auto=format&fit=crop&q=80&w=600', videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', title: 'Erfahrungsbericht 5' },
+  { id: 6, thumbnail: 'https://images.unsplash.com/photo-1544919982-b61976f0ba43?auto=format&fit=crop&q=80&w=600', videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', title: 'Erfahrungsbericht 6' },
 ];
