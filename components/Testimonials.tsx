@@ -5,13 +5,11 @@ import { TESTIMONIALS, VIDEO_TESTIMONIALS } from '../constants';
 const Testimonials: React.FC = () => {
   useEffect(() => {
     // Initialize Swiper
-    // To avoid loop warnings, we only enable loop if we have enough slides.
-    // Swiper typically needs (slidesPerView * 2) or at least more than slidesPerView for smooth looping.
-    const swiper = new (window as any).Swiper('.video-swiper', {
+    new (window as any).Swiper('.video-swiper', {
       slidesPerView: 1.2,
       spaceBetween: 20,
       centeredSlides: true,
-      loop: VIDEO_TESTIMONIALS.length > 3,
+      loop: true,
       autoplay: {
         delay: 6000,
         disableOnInteraction: false,
@@ -29,10 +27,6 @@ const Testimonials: React.FC = () => {
         clickable: true,
       },
     });
-
-    return () => {
-      if (swiper && swiper.destroy) swiper.destroy();
-    };
   }, []);
 
   return (
