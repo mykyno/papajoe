@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-gray-900">
       {/* Parallax Background Video */}
       <div 
         className="absolute inset-0 z-0"
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Floating Particles */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
+      <div className="absolute inset-0 z-10 pointer-events-none hidden md:block">
         {[...Array(5)].map((_, i) => (
           <div 
             key={i}
@@ -53,14 +53,14 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
+      <div className="relative z-20 text-center px-4 max-w-5xl mx-auto pt-16">
         <div data-aos="fade-down" data-aos-duration="1000">
-          <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-accent font-bold text-sm mb-8 tracking-[0.2em] uppercase shadow-lg">
+          <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-accent font-bold text-xs md:text-sm mb-6 md:mb-8 tracking-[0.2em] uppercase shadow-lg">
             Luzern, Schweiz
           </span>
         </div>
         
-        <h1 className="font-heading font-black text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight drop-shadow-2xl">
+        <h1 className="font-heading font-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white mb-6 md:mb-8 leading-tight drop-shadow-2xl">
           <span className="block" data-aos="fade-up" data-aos-delay="200">CHAMPIONS</span>
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-400 to-accent" data-aos="fade-up" data-aos-delay="400">
             WERDEN HIER
@@ -68,34 +68,33 @@ const Hero: React.FC = () => {
           <span className="block" data-aos="fade-up" data-aos-delay="600">GEMACHT</span>
         </h1>
         
-        <p className="text-gray-100 text-lg md:text-2xl mb-12 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md" data-aos="fade-up" data-aos-delay="800">
-          Professionelles Basketball-Training für Kinder und Jugendliche. <br/>
+        <p className="text-gray-100 text-base md:text-2xl mb-8 md:mb-12 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md px-2" data-aos="fade-up" data-aos-delay="800">
+          Professionelles Basketball-Training für Kinder und Jugendliche. <br className="hidden md:block"/>
           <span className="text-primary font-bold">1000+</span> trainierte Kinder seit 2014.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center" data-aos="fade-up" data-aos-delay="1000">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="1000">
           <a
             href="#contact"
-            className="group relative bg-primary text-white font-bold py-4 px-10 rounded-full text-lg transition-all transform hover:scale-105 hover:shadow-[0_0_30px_rgba(255,98,0,0.6)] overflow-hidden"
+            className="w-full sm:w-auto group relative bg-primary text-white font-bold py-4 px-10 rounded-full text-lg transition-all transform hover:scale-105 hover:shadow-[0_0_30px_rgba(255,98,0,0.6)] overflow-hidden"
           >
-            <span className="relative z-10 flex items-center">
+            <span className="relative z-10 flex items-center justify-center">
               PROBETRAINING BUCHEN
             </span>
             <div className="absolute inset-0 h-full w-full rounded-full bg-white/30 animate-pulse-slow"></div>
-            <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 group-hover:animate-shine transition-all duration-700"></div>
           </a>
           
           <a
             href="#programs"
-            className="px-10 py-4 rounded-full border-2 border-white/30 bg-white/5 backdrop-blur-sm text-white font-bold hover:bg-white hover:text-secondary transition-all text-lg hover:border-white"
+            className="w-full sm:w-auto px-10 py-4 rounded-full border-2 border-white/30 bg-white/5 backdrop-blur-sm text-white font-bold hover:bg-white hover:text-secondary transition-all text-lg hover:border-white"
           >
-            PROGRAMME ANSEHEN
+            PROGRAMME
           </a>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce text-white/70">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce text-white/70 hidden md:block">
         <a href="#programs" className="flex flex-col items-center gap-2 group cursor-pointer hover:text-primary transition-colors">
           <span className="text-xs uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">Scroll</span>
           <ArrowDown size={32} />

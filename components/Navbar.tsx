@@ -31,16 +31,16 @@ const Navbar: React.FC = () => {
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-500 border-b border-transparent ${
-        scrolled ? 'glass-nav py-3' : 'bg-transparent py-6'
-      }`}
+        scrolled ? 'glass-nav py-2' : 'bg-transparent py-4'
+      } ${isOpen ? 'bg-secondary' : ''}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex items-center group cursor-pointer" onClick={() => window.scrollTo(0,0)}>
+          <div className="flex items-center group cursor-pointer flex-shrink-0" onClick={() => window.scrollTo(0,0)}>
             <span className="text-primary mr-2 transform group-hover:rotate-12 transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2.1 13.4h19.8"/><path d="M5.9 3.1A12 12 0 0 1 12 22"/><path d="M18.1 3.1A12 12 0 0 0 12 22"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2.1 13.4h19.8"/><path d="M5.9 3.1A12 12 0 0 1 12 22"/><path d="M18.1 3.1A12 12 0 0 0 12 22"/></svg>
             </span>
-            <span className="font-heading font-black text-2xl tracking-tighter text-white">
+            <span className="font-heading font-black text-xl md:text-2xl tracking-tighter text-white whitespace-nowrap">
               UNCLE'S <span className="text-primary">ACADEMY</span>
             </span>
           </div>
@@ -70,13 +70,13 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-primary transition-colors p-2"
+              className="text-white hover:text-primary transition-colors p-2 focus:outline-none"
               aria-label="Menu"
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={32} /> : <Menu size={32} />}
             </button>
           </div>
         </div>
@@ -84,17 +84,17 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-secondary/95 backdrop-blur-xl border-t border-gray-700 shadow-2xl transition-all duration-500 ease-in-out origin-top ${
+        className={`md:hidden absolute top-full left-0 w-full bg-secondary border-t border-gray-700 shadow-2xl transition-all duration-300 ease-in-out origin-top flex flex-col h-[calc(100vh-64px)] ${
           isOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'
         }`}
       >
-        <div className="flex flex-col p-6 space-y-4">
+        <div className="flex flex-col p-6 space-y-6 overflow-y-auto">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-white hover:text-primary text-xl font-bold py-2 border-b border-white/10"
+              className="text-white hover:text-primary text-2xl font-bold py-2 border-b border-white/10"
             >
               {link.label}
             </a>
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
           <a
             href="#contact"
             onClick={() => setIsOpen(false)}
-            className="bg-primary text-center text-white py-4 rounded-xl font-bold uppercase tracking-widest mt-4"
+            className="bg-primary text-center text-white py-4 rounded-xl font-bold uppercase tracking-widest mt-8 shadow-lg"
           >
             Kostenloses Probetraining
           </a>
