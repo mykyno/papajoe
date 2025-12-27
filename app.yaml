@@ -1,0 +1,17 @@
+runtime: nodejs18
+
+handlers:
+  - url: /
+    static_files: index.html
+    upload: index.html
+
+  - url: /(.*)
+    static_files: \1
+    upload: (.*)
+
+env_variables:
+  NODE_ENV: 'production'
+
+automatic_scaling:
+  min_idle_instances: 1
+  max_idle_instances: 3
